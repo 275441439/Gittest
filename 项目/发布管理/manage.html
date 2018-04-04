@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>发布管理1</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <script src="../js/jquery-3.1.1.js"></script>
+    <script src="../js/demo2.js"></script>
+    <style>
+    	.color{
+    		color: #3E78B4 !important;
+    	}
+    
+        .list{
+        	background-color: #FF6600;
+            color: white;
+            border: none !important;
+        }
+    </style>
+</head>
+<body>
+	<div class="issue">
+	   <h2>发布管理</h2>
+	   <div style="border: solid 1px #D2D2D2; margin-top: 20px;"></div>
+	   <ul class="list-unstyled list-inline ul9" id="uld">
+	   	 <li ><a href="javascript:void(0);" class="color">普通软文</a></li>
+	     <li><a href="javascript:void(0);">微信推广</a></li>
+	     <li><a href="javascript:void(0);">软文代写</a></li>
+	     <li><a href="javascript:void(0);">回收站</a></li>
+	   </ul>
+	   <ul class="list-unstyled list-inline ula">
+	   	   <li>创建时间</li>:
+	   	<li class="time-li" onclick="showMenu()">
+	   	  <span>2016-11-01</span>
+	   	  <img src="../images/9.png"/>
+	   	</li>
+	    <li>至</li>
+	    <li class="time-li" onclick="showMenu2()">
+	      <span>2016-12-01</span>
+	   	  <img src="../images/9.png"/>
+	    </li>
+	    <li class="state" onclick="showMenu3()">
+	      <span id="span">当前状态</span>
+	   	  <img src="../images/9.png"/>
+	    </li>
+	    <li>
+	       <input type="text" name="select" id="select" placeholder="请输入文章标题或者订单号进行搜索" />
+	       <button class="select-btn">查询</button>
+	       <button class="educe">导出到Excel</button>
+	    </li>
+	   </ul>	   
+	   <div class="calendars">
+	   	  <div class="year" id="year" style="display: none;">
+	   	  	 <div class="year-left text-center">
+	   	  	 	<a href="javascript:void(0);"><img src="../images/22.png"/></a>
+	   	  	    <span>2016年</span>
+	   	  	    <a href="javascript:void(0);"><img src="../images/23.png"/></a>
+	   	  	 </div>
+	   	     <div class="year-right text-center">
+	   	     	<a href="javascript:void(0);"><img src="../images/22.png"/></a>
+	   	  	    <span>&nbsp;&nbsp;11月&nbsp;&nbsp;</span>
+	   	  	    <a href="javascript:void(0);"><img src="../images/23.png"/></a>
+	   	     </div>		   	     
+	   	     <table class="text-center table-condensed time-table">
+	   	         <thead>
+	   	           <th>日</th>
+	   	           <th>一</th>
+	   	           <th>二</th>
+	   	           <th>三</th>
+	   	           <th>四</th>
+	   	           <th>五</th>
+	   	           <th>六</th>
+	   	         </thead> 
+	   	         <tbody>
+	   	         	 <tr>
+	   	         	   <td ><a href="javascript:void(0);" style="color: #E4E4E4;">30</a></td>
+	   	         	   <td ><a href="javascript:void(0);" style="color: #E4E4E4;">31</a></td>
+	   	         	   <td><a href="javascript:void(0);">1</a></td>
+	   	         	   <td><a href="javascript:void(0);">2</a></td>
+	   	         	   <td><a href="javascript:void(0);">3</a></td>
+	   	         	   <td><a href="javascript:void(0);">4</a></td>
+	   	         	   <td><a href="javascript:void(0);">5</a></td>
+	   	         	 </tr>
+	   	             <tr>
+	   	               <td><a href="javascript:void(0);">6</a></td>
+	   	         	   <td><a href="javascript:void(0);">7</a></td>
+	   	         	   <td><a href="javascript:void(0);">8</a></td>
+	   	         	   <td><a href="javascript:void(0);">9</a></td>
+	   	         	   <td><a href="javascript:void(0);">10</a></td>
+	   	         	   <td><a href="javascript:void(0);">11</a></td>
+	   	         	   <td><a href="javascript:void(0);">12</a></td>
+	   	             </tr>
+	   	             <tr>
+	   	               <td><a href="javascript:void(0);">13</a></td>
+	   	         	   <td><a href="javascript:void(0);">14</a></td>
+	   	         	   <td><a href="javascript:void(0);">15</a></td>
+	   	         	   <td><a href="javascript:void(0);">16</a></td>
+	   	         	   <td><a href="javascript:void(0);">17</a></td>
+	   	         	   <td><a href="javascript:void(0);">18</a></td>
+	   	         	   <td><a href="javascript:void(0);">19</a></td>
+	   	             </tr>
+	   	             <tr>
+	   	               <td><a href="javascript:void(0);">20</a></td>
+	   	         	   <td><a href="javascript:void(0);">21</a></td>
+	   	         	   <td><a href="javascript:void(0);">22</a></td>
+	   	         	   <td><a href="javascript:void(0);">23</a></td>
+	   	         	   <td><a href="javascript:void(0);">24</a></td>
+	   	         	   <td><a href="javascript:void(0);">25</a></td>
+	   	         	   <td><a href="javascript:void(0);">26</a></td>
+	   	             </tr>
+	   	             <tr>
+	   	               <td><a href="javascript:void(0);">27</a></td>
+	   	         	   <td><a href="javascript:void(0);">28</a></td>
+	   	         	   <td><a href="javascript:void(0);">29</a></td>
+	   	         	   <td><a href="javascript:void(0);">30</a></td>
+	   	         	   <td ><a href="javascript:void(0);" style="color: #E4E4E4;">1</a></td>
+	   	         	   <td ><a href="javascript:void(0);" style="color: #E4E4E4;">2</a></td>
+	   	         	   <td ><a href="javascript:void(0);" style="color: #E4E4E4;">3</a></td>
+	   	             </tr>
+	   	         </tbody>
+	   	     </table>	   	     	   	     
+	     </div>
+	     <div class="years" id="years" style="display: none;">
+	     	<div class="year-left text-center">
+	   	  	 	<a href="javascript:void(0);"><img src="../images/22.png"/></a>
+	   	  	    <span>2016年</span>
+	   	  	    <a href="javascript:void(0);"><img src="../images/23.png"/></a>
+	   	  	 </div>
+	   	     <div class="year-right text-center">
+	   	     	<a href="javascript:void(0);"><img src="../images/22.png"/></a>
+	   	  	    <span>&nbsp;&nbsp;12月&nbsp;&nbsp;</span>
+	   	  	    <a href="javascript:void(0);"><img src="../images/23.png"/></a>
+	   	     </div>		   	     
+	   	     <table class="text-center table-condensed time-table">
+	   	         <thead>
+	   	           <th>日</th>
+	   	           <th>一</th>
+	   	           <th>二</th>
+	   	           <th>三</th>
+	   	           <th>四</th>
+	   	           <th>五</th>
+	   	           <th>六</th>
+	   	         </thead> 
+	   	         <tbody>
+	   	         	 <tr>
+	   	         	   <td ><a href="javascript:void(0);" style="color: #E4E4E4;">30</a></td>
+	   	         	   <td ><a href="javascript:void(0);" style="color: #E4E4E4;">31</a></td>
+	   	         	   <td><a href="javascript:void(0);">1</a></td>
+	   	         	   <td><a href="javascript:void(0);">2</a></td>
+	   	         	   <td><a href="javascript:void(0);">3</a></td>
+	   	         	   <td><a href="javascript:void(0);">4</a></td>
+	   	         	   <td><a href="javascript:void(0);">5</a></td>
+	   	         	 </tr>
+	   	             <tr>
+	   	               <td><a href="javascript:void(0);">6</a></td>
+	   	         	   <td><a href="javascript:void(0);">7</a></td>
+	   	         	   <td><a href="javascript:void(0);">8</a></td>
+	   	         	   <td><a href="javascript:void(0);">9</a></td>
+	   	         	   <td><a href="javascript:void(0);">10</a></td>
+	   	         	   <td><a href="javascript:void(0);">11</a></td>
+	   	         	   <td><a href="javascript:void(0);">12</a></td>
+	   	             </tr>
+	   	             <tr>
+	   	               <td><a href="javascript:void(0);">13</a></td>
+	   	         	   <td><a href="javascript:void(0);">14</a></td>
+	   	         	   <td><a href="javascript:void(0);">15</a></td>
+	   	         	   <td><a href="javascript:void(0);">16</a></td>
+	   	         	   <td><a href="javascript:void(0);">17</a></td>
+	   	         	   <td><a href="javascript:void(0);">18</a></td>
+	   	         	   <td><a href="javascript:void(0);">19</a></td>
+	   	             </tr>
+	   	             <tr>
+	   	               <td><a href="javascript:void(0);">20</a></td>
+	   	         	   <td><a href="javascript:void(0);">21</a></td>
+	   	         	   <td><a href="javascript:void(0);">22</a></td>
+	   	         	   <td><a href="javascript:void(0);">23</a></td>
+	   	         	   <td><a href="javascript:void(0);">24</a></td>
+	   	         	   <td><a href="javascript:void(0);">25</a></td>
+	   	         	   <td><a href="javascript:void(0);">26</a></td>
+	   	             </tr>
+	   	             <tr>
+	   	               <td><a href="javascript:void(0);">27</a></td>
+	   	         	   <td><a href="javascript:void(0);">28</a></td>
+	   	         	   <td><a href="javascript:void(0);">29</a></td>
+	   	         	   <td><a href="javascript:void(0);">30</a></td>
+	   	         	   <td ><a href="javascript:void(0);" style="color: #E4E4E4;">1</a></td>
+	   	         	   <td ><a href="javascript:void(0);" style="color: #E4E4E4;">2</a></td>
+	   	         	   <td ><a href="javascript:void(0);" style="color: #E4E4E4;">3</a></td>
+	   	             </tr>
+	   	         </tbody>
+	   	     </table>	   	     	   	 
+	     </div>
+	     <div class="now" id="now" style="display: none;">
+	     	<div class="now-content">
+	     	   <ul class="list-unstyled ulb" id="ule">
+	     	   	<li>当前状态</li>
+	     	    <li>已发布</li>
+	     	    <li>未发布</li>
+	     	    <li>退款中</li>
+	     	    <li>已发布</li>
+	     	    <li>未发布</li>
+	     	    <li>退款中</li>
+	     	   </ul>
+	     	</div>
+	     </div>
+	   </div>
+	   <table class=" table-condensed" id="table">
+	   	   <thead class="thead2">
+	   	   	    <th class="text-center" style="border-left: solid 1px #F1F1F1;">订单号</th>
+	   	        <th class="text-center">文章标题</th>
+	   	        <th class="text-center">网页链接</th>
+	   	        <th class="text-center">媒体名称</th>
+	   	        <th class="text-center">金额</th>
+	   	        <th class="text-center">当前状态</th>
+	   	        <th class="text-center">创建时间</th>
+	   	        <th class="text-center" style="border-right: solid 1px #F1F1F1;">操作</th>
+	   	   </thead>
+	       <tbody class="text-center tbody">
+	       	    <tr>
+	       	       <td style="border-left: solid 1px #D8D8D8;">201611300454081463</td>
+	       	       <td>16岁女儿跟男网友出走...</td>
+	       	       <td></td>
+	       	       <td><a href="javascript:void(0);" style="color: #4F80B7;">选择媒体</a></td>
+	       	       <td>0元</td>
+	       	       <td>未发布</td>
+	       	       <td>11-07 15:30</td>
+	       	       <td style="border-right: solid 1px #D8D8D8;">
+	       	         <a href="javascript:void(0);" style="color: #4F80B7;">编辑</a>
+	       	         <a href="javascript:void(0);">删除</a>
+	       	       </td>
+	       	    </tr>
+	            <tr>
+	               <td style="border-left: solid 1px #D8D8D8;">201611300454081463</td>
+	       	       <td>16岁女儿跟男网友出走...</td>
+	       	       <td><a href="javascript:void(0);" style="color: #FF6601;">http://www.city96.com/xwdt/20161108/342243.html</a></td>
+	       	       <td>天津在线</td>
+	       	       <td>15元</td>
+	       	       <td>已发布</td>
+	       	       <td>11-07 15:30</td>
+	       	       <td style="border-right: solid 1px #D8D8D8;">
+	       	         <a href="javascript:void(0);">查看</a>
+	       	         <a href="javascript:void(0);">删除</a>
+	       	       </td>
+	            </tr>
+	            <tr>
+	               <td style="border-left: solid 1px #D8D8D8;">201611300454081463</td>
+	       	       <td>16岁女儿跟男网友出走...</td>
+	       	       <td></td>
+	       	       <td>天津在线</td>
+	       	       <td>15元</td>
+	       	       <td style="color: red;">退款中</td>
+	       	       <td>11-07 15:30</td>
+	       	       <td style="border-right: solid 1px #D8D8D8;"></td>	       	       
+	            </tr>
+	            <tr>
+	               <td style="border-left: solid 1px #D8D8D8;">201611300454081463</td>
+	       	       <td>16岁女儿跟男网友出走...</td>
+	       	       <td></td>
+	       	       <td>天津在线</td>
+	       	       <td>15元</td>
+	       	       <td>已拒稿</td>
+	       	       <td>11-07 15:30</td>
+	       	       <td style="border-right: solid 1px #D8D8D8;">
+	       	         <a href="javascript:void(0);"></a>
+	       	         <a href="javascript:void(0);">删除</a>
+	       	       </td>
+	            </tr>
+	            <tr>
+	               <td style="border-left: solid 1px #D8D8D8;">201611300454081463</td>
+	       	       <td>16岁女儿跟男网友出走...</td>
+	       	       <td></td>
+	       	       <td>天津在线</td>
+	       	       <td>15元</td>
+	       	       <td>已退款</td>
+	       	       <td>11-07 15:30</td>
+	       	       <td style="border-right: solid 1px #D8D8D8;">
+	       	         <a href="javascript:void(0);">重发</a>
+	       	         <a href="javascript:void(0);">删除</a>
+	       	       </td>
+	            </tr>
+	            <tr>
+	       	       <td style="border-left: solid 1px #D8D8D8;">201611300454081463</td>
+	       	       <td>16岁女儿跟男网友出走...</td>
+	       	       <td></td>
+	       	       <td><a href="javascript:void(0);" style="color: #4F80B7;">选择媒体</a></td>
+	       	       <td>0元</td>
+	       	       <td>未发布</td>
+	       	       <td>11-07 15:30</td>
+	       	       <td style="border-right: solid 1px #D8D8D8;">
+	       	         <a href="javascript:void(0);" style="color: #4F80B7;">编辑</a>
+	       	         <a href="javascript:void(0);">删除</a>
+	       	       </td>
+	       	    </tr>
+	            <tr>
+	               <td style="border-left: solid 1px #D8D8D8;">201611300454081463</td>
+	       	       <td>16岁女儿跟男网友出走...</td>
+	       	       <td><a href="javascript:void(0);" style="color: #FF6601;">http://www.city96.com/xwdt/20161108/342243.html</a></td>
+	       	       <td>天津在线</td>
+	       	       <td>15元</td>
+	       	       <td>已发布</td>
+	       	       <td>11-07 15:30</td>
+	       	       <td style="border-right: solid 1px #D8D8D8;">
+	       	         <a href="javascript:void(0);">查看</a>
+	       	         <a href="javascript:void(0);">删除</a>
+	       	       </td>
+	            </tr>
+	            <tr>
+	               <td style="border-left: solid 1px #D8D8D8;">201611300454081463</td>
+	       	       <td>16岁女儿跟男网友出走...</td>
+	       	       <td></td>
+	       	       <td>天津在线</td>
+	       	       <td>15元</td>
+	       	       <td style="color: red;">退款中</td>
+	       	       <td>11-07 15:30</td>
+	       	       <td style="border-right: solid 1px #D8D8D8;"></td>	       	       
+	            </tr>
+	            <tr>
+	               <td style="border-left: solid 1px #D8D8D8;">201611300454081463</td>
+	       	       <td>16岁女儿跟男网友出走...</td>
+	       	       <td></td>
+	       	       <td>天津在线</td>
+	       	       <td>15元</td>
+	       	       <td>已拒稿</td>
+	       	       <td>11-07 15:30</td>
+	       	       <td style="border-right: solid 1px #D8D8D8;">
+	       	         <a href="javascript:void(0);"></a>
+	       	         <a href="javascript:void(0);">删除</a>
+	       	       </td>
+	            </tr>
+	            <tr>
+	               <td style="border-left: solid 1px #D8D8D8;">201611300454081463</td>
+	       	       <td>16岁女儿跟男网友出走...</td>
+	       	       <td></td>
+	       	       <td>天津在线</td>
+	       	       <td>15元</td>
+	       	       <td>已退款</td>
+	       	       <td>11-07 15:30</td>
+	       	       <td style="border-right: solid 1px #D8D8D8;">
+	       	         <a href="javascript:void(0);">重发</a>
+	       	         <a href="javascript:void(0);">删除</a>
+	       	       </td>
+	            </tr>
+	       </tbody>
+	   </table>
+	   <ul class="list-unstyled text-center list-inline list-ul" id="ul0">
+	 	<li id="list">上一页</li>
+	    <li id="list-li" class="list">1</li>
+	    <li id="list1">下一页</li>
+	 </ul>
+	</div>
+</body>
+</html>

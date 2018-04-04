@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>软文发布3</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <script src="../js/jquery-3.1.1.js"></script>
+    <script src="../js/my.js"></script>
+    <style>
+    	.active{
+    		color: #FF6600 !important;
+    	    border-color: #FF6600 !important;
+    	}
+        .list{
+        	background-color: #FF6600;
+            color: white;
+            border: none !important;
+        }
+    </style>
+</head>
+<body>
+	<div class="inquirt">
+	   <div class="search">
+	      <input type="text" id="input" placeholder="输入媒体名称查询"/>
+	      <button class="btn2">搜索</button>
+	   </div>
+	   <ul class="list-unstyled  list-inline ul4">
+	   	 <li style="border: none;">筛选&nbsp;:</li>
+	     <li class="li" onclick="box2()">
+	       <span id="span1">类型</span>
+	       <img src="../images/9.png"/>
+	     </li>
+	     <li class="li" onclick="box3()">
+	       <span id="span2">小类</span>
+	       <img src="../images/9.png"/>
+	     </li>
+	     <li class="li" onclick="box4()">
+	       <span id="span3">价格</span>
+	       <img src="../images/9.png"/>
+	     </li>
+	     <li class="li1" onclick="box5()">
+	       <span id="span4">地区</span>
+	       <img src="../images/9.png"/>
+	     </li>
+	     <li class="li2" onclick="box6()">
+	       <span id="span5">带网址情况</span>
+	       <img src="../images/9.png"/>
+	     </li>
+	     <li class="li3" onclick="box7()">
+	       <span id="span6">新闻来源</span>
+	       <img src="../images/9.png"/>
+	     </li>
+	   </ul>
+	   <div class="screen">
+	   	  <div class="type" id="type" style="display: none;">
+	   	  	 <div class="type-content">
+	   	  	 	<ul class="ul2" id="ul3">
+	   	  	 		<li>类型</li>
+	   	  	 		<li>新闻媒体</li>
+	   	  	 	    <li>娱乐资讯</li>
+	   	  	 	    <li>体育快报</li>
+	   	  	 	    <li>新闻媒体</li>
+	   	  	 	    <li>娱乐资讯</li>
+	   	  	 	    <li>体育快报</li>
+	   	  	 	</ul>
+	   	  	 </div>
+	   	  </div>
+	      <div class="subd" id="subd" style="display: none;">
+	      	<div class="type-content">
+	   	  	 	<ul class="ul2" id="ul4">
+	   	  	 		<li>小类</li>
+	   	  	 		<li>新闻媒体</li>
+	   	  	 	    <li>娱乐资讯</li>
+	   	  	 	    <li>体育快报</li>
+	   	  	 	    <li>新闻媒体</li>
+	   	  	 	    <li>娱乐资讯</li>
+	   	  	 	    <li>体育快报</li>
+	   	  	 	</ul>
+	   	  	 </div>
+	      </div>
+	      <div class="price" id="price" style="display: none;">
+	      	<div class="type-content">
+	   	  	 	<ul class="ul2" id="ul5">
+	   	  	 		<li>价格</li>
+	   	  	 		<li>0~10</li>
+	   	  	 	    <li>11~30</li>
+	   	  	 	    <li>31~50</li>
+	   	  	 	    <li>0~10</li>
+	   	  	 	    <li>11~30</li>
+	   	  	 	    <li>31~50</li>
+	   	  	 	</ul>
+	   	  	 </div>
+	      </div>
+	      <div class="local" id="local" style="display: none;">
+	      	<div class="type-content">
+	   	  	 	<ul class="ul2" id="ul6">
+	   	  	 		<li>地区</li>
+	   	  	 		<li>福建</li>
+	   	  	 	    <li>北京</li>
+	   	  	 	    <li>上海</li>
+	   	  	 	    <li>福建</li>
+	   	  	 	    <li>北京</li>
+	   	  	 	    <li>上海</li>
+	   	  	 	</ul>
+	   	  	 </div>
+	      </div>
+	      <div class="matters" id="matters" style="display: none;">
+	      	<div class="type-content">
+	   	  	 	<ul class="ul2" id="ul7">
+	   	  	 		<li>带网址情况</li>
+	   	  	 		<li>可带网址</li>
+	   	  	 	    <li>不可带网址</li>
+	   	  	 	</ul>
+	   	  	 </div>
+	      </div>
+	      <div class="source" id="source" style="display: none;">
+	      	<div class="type-content">
+	   	  	 	<ul class="ul2" id="ul8">
+	   	  	 		<li>新闻来源</li>
+	   	  	 		<li>百度新闻源</li>
+	   	  	 	    <li>网页收录</li>
+	   	  	 	</ul>
+	   	  	 </div>
+	      </div>
+	   </div>
+	   <ul class="list-unstyled  list-inline ul5" id="ul9">
+	   	 <li style="border: none;">排序&nbsp;:</li>
+	     <li id="li4" class="active">默认排序</li>
+	     <li id="li5">按价格升序</li>
+	     <li id="li6">按价格降序</li>
+	     <li id="li7">按推荐排序</li>
+	   </ul>
+	   <span class="span">您的会员等级&nbsp;:&nbsp;<span style="color: #FF6600;">商虎通(&nbsp;标准版&nbsp;)</span>&nbsp;享受价格<span style="color: #FF6600;">8</span>折优惠</span>
+	   <div class="table-responsive">
+	   <table class="table-condensed table1">
+	   	    <thead class="thead">
+	   	        <th class="text-center">选择</th>
+	   	        <th class="text-center">媒体名称</th>	
+	            <th class="text-center">媒体类型</th>
+	            <th class="text-center">媒体小类</th>
+	   	        <th class="text-center">媒体价格（原价）</th>	
+	            <th class="text-center">带网址情况</th>
+	            <th class="text-center">新闻来源</th>
+	   	        <th class="text-center">推荐星级</th>	
+	            <th class="text-center">备注</th>
+	        </thead>
+	        <tbody class="text-center" style="color: #444444;">
+	        	<tr class="tr">
+	        	  <td>
+	        	  	<input type="checkbox"/>
+	        	  </td>
+	        	  <td>天津在线</td>
+	        	  <td>商业资讯</td>
+	        	  <td></td>
+	        	  <td>
+	        	  	<span style="color: red;">40</span>&nbsp;<img src="../images/12.png" id="img"/ >
+	        	  </td>
+	        	  <td>可超链接</td>
+	        	  <td>网页收录</td>  
+	        	  <td>
+	        	  	<img src="../images/10.png"/>
+	        	    <img src="../images/10.png"/>
+	        	    <img src="../images/10.png"/>
+	        	    <img src="../images/10.png"/>
+	        	    <img src="../images/10.png"/>
+	        	  </td>
+	        	  <td>暂停服务</td>
+	        	</tr>
+	            <tr class="tr">
+	        	  <td>
+	        	  	<input type="checkbox"/>
+	        	  </td>
+	        	  <td>天津在线</td>
+	        	  <td>商业资讯</td>
+	        	  <td></td>
+	        	  <td>
+	        	  	<span style="color: red;">40</span>&nbsp;<img src="../images/12.png" id="img"/ >
+	        	  </td>
+	        	  <td>可超链接</td>
+	        	  <td>网页收录</td>  
+	        	  <td>
+	        	  	<img src="../images/10.png"/>
+	        	    <img src="../images/10.png"/>
+	        	    <img src="../images/10.png"/>
+	        	    <img src="../images/10.png"/>
+	        	    <img src="../images/11.png"/>
+	        	  </td>
+	        	  <td>暂停服务</td>
+	        	</tr>
+	            <tr class="tr">
+	        	  <td>
+	        	  	<input type="checkbox"/>
+	        	  </td>
+	        	  <td>天津在线</td>
+	        	  <td>商业资讯</td>
+	        	  <td></td>
+	        	  <td>
+	        	  	<span style="color: red;">40</span>&nbsp;<img src="../images/12.png" id="img"/ >
+	        	  </td>
+	        	  <td>可超链接</td>
+	        	  <td>网页收录</td>  
+	        	  <td>
+	        	  	<img src="../images/10.png"/>
+	        	    <img src="../images/10.png"/>
+	        	    <img src="../images/10.png"/>
+	        	    <img src="../images/10.png"/>
+	        	  </td>
+	        	  <td>暂停服务</td>
+	        	</tr>
+	            <tr class="tr">
+	        	  <td>
+	        	  	<input type="checkbox"/>
+	        	  </td>
+	        	  <td>天津在线</td>
+	        	  <td>商业资讯</td>
+	        	  <td></td>
+	        	  <td>
+	        	  	<span style="color: red;">40</span>&nbsp;<img src="../images/12.png" id="img"/ >
+	        	  </td>
+	        	  <td>可超链接</td>
+	        	  <td>网页收录</td>  
+	        	  <td>
+	        	  	<img src="../images/10.png"/>
+	        	    <img src="../images/10.png"/>
+	        	    <img src="../images/10.png"/>
+	        	    <img src="../images/10.png"/>
+	        	    <img src="../images/11.png"/>
+	        	  </td>
+	        	  <td>暂停服务</td>
+	        	</tr>
+	            <tr class="tr">
+	        	  <td>
+	        	  	<input type="checkbox"/>
+	        	  </td>
+	        	  <td>天津在线</td>
+	        	  <td>商业资讯</td>
+	        	  <td></td>
+	        	  <td>
+	        	  	<span style="color: red;">40</span>&nbsp;<img src="../images/12.png" id="img"/ >
+	        	  </td>
+	        	  <td>可超链接</td>
+	        	  <td>网页收录</td>  
+	        	  <td>
+	        	  	<img src="../images/10.png"/>
+	        	    <img src="../images/10.png"/>
+	        	    <img src="../images/10.png"/>
+	        	  </td>
+	        	  <td>暂停服务</td>
+	        	</tr>
+	            <tr class="tr">
+	        	  <td>
+	        	  	<input type="checkbox"/>
+	        	  </td>
+	        	  <td>天津在线</td>
+	        	  <td>商业资讯</td>
+	        	  <td></td>
+	        	  <td>
+	        	  	<span style="color: red;">40</span>&nbsp;<img src="../images/12.png" id="img"/ >
+	        	  </td>
+	        	  <td>可超链接</td>
+	        	  <td>网页收录</td>  
+	        	  <td>
+	        	  	<img src="../images/10.png"/>
+	        	    <img src="../images/10.png"/>
+	        	    <img src="../images/11.png"/>
+	        	  </td>
+	        	  <td>暂停服务</td>
+	        	</tr>
+	            <tr class="tr">
+	        	  <td>
+	        	  	<input type="checkbox"/>
+	        	  </td>
+	        	  <td>天津在线</td>
+	        	  <td>商业资讯</td>
+	        	  <td></td>
+	        	  <td>
+	        	  	<span style="color: red;">40</span>&nbsp;<img src="../images/12.png" id="img"/ >
+	        	  </td>
+	        	  <td>可超链接</td>
+	        	  <td>网页收录</td>  
+	        	  <td>
+	        	  	<img src="../images/10.png"/>
+	        	    <img src="../images/10.png"/>
+	        	  </td>
+	        	  <td>暂停服务</td>
+	        	</tr>
+	            <tr class="tr">
+	        	  <td>
+	        	  	<input type="checkbox"/>
+	        	  </td>
+	        	  <td>天津在线</td>
+	        	  <td>商业资讯</td>
+	        	  <td></td>
+	        	  <td>
+	        	  	<span style="color: red;">40</span>&nbsp;<img src="../images/12.png" id="img"/ >
+	        	  </td>
+	        	  <td>可超链接</td>
+	        	  <td>网页收录</td>  
+	        	  <td>
+	        	  	<img src="../images/10.png"/>
+	        	    <img src="../images/11.png"/>	        	    
+	        	  </td>
+	        	  <td>暂停服务</td>
+	        	</tr>
+	            <tr class="tr">
+	        	  <td>
+	        	  	<input type="checkbox"/>
+	        	  </td>
+	        	  <td>天津在线</td>
+	        	  <td>商业资讯</td>
+	        	  <td></td>
+	        	  <td>
+	        	  	<span style="color: red;">40</span>&nbsp;<img src="../images/12.png" id="img"/ >
+	        	  </td>
+	        	  <td>可超链接</td>
+	        	  <td>网页收录</td>  
+	        	  <td>
+	        	  	<img src="../images/10.png"/>
+	        	  </td>
+	        	  <td>暂停服务</td>
+	        	</tr>
+	            <tr class="tr">
+	        	  <td>
+	        	  	<input type="checkbox"/>
+	        	  </td>
+	        	  <td>天津在线</td>
+	        	  <td>商业资讯</td>
+	        	  <td></td>
+	        	  <td>
+	        	  	<span style="color: red;">40</span>&nbsp;<img src="../images/12.png" id="img"/ >
+	        	  </td>
+	        	  <td>可超链接</td>
+	        	  <td>网页收录</td>  
+	        	  <td>
+	        	  	<img src="../images/11.png"/>	        	    
+	        	  </td>
+	        	  <td>暂停服务</td>
+	        	</tr>
+	            <tr class="tr">
+	        	  <td>
+	        	  	<input type="checkbox"/>
+	        	  </td>
+	        	  <td>天津在线</td>
+	        	  <td>商业资讯</td>
+	        	  <td></td>
+	        	  <td>
+	        	  	<span style="color: red;">40</span>&nbsp;<img src="../images/12.png" id="img"/ >
+	        	  </td>
+	        	  <td>可超链接</td>
+	        	  <td>网页收录</td>  
+	        	  <td>
+	        	  	<img src="../images/10.png"/>
+	        	    <img src="../images/10.png"/>
+	        	    <img src="../images/11.png"/>
+	        	  </td>
+	        	  <td>暂停服务</td>
+	        	</tr>
+	            <tr class="tr">
+	        	  <td>
+	        	  	<input type="checkbox"/>
+	        	  </td>
+	        	  <td>天津在线</td>
+	        	  <td>商业资讯</td>
+	        	  <td></td>
+	        	  <td>
+	        	  	<span style="color: red;">40</span>&nbsp;<img src="../images/12.png" id="img"/ >
+	        	  </td>
+	        	  <td>可超链接</td>
+	        	  <td>网页收录</td>  
+	        	  <td>
+	        	  	<img src="../images/10.png"/>
+	        	    <img src="../images/10.png"/>
+	        	  </td>
+	        	  <td>暂停服务</td>
+	        	</tr>
+	            <tr class="tr">
+	        	  <td>
+	        	  	<input type="checkbox"/>
+	        	  </td>
+	        	  <td>天津在线</td>
+	        	  <td>商业资讯</td>
+	        	  <td></td>
+	        	  <td>
+	        	  	<span style="color: red;">40</span>&nbsp;<img src="../images/12.png" id="img"/ >
+	        	  </td>
+	        	  <td>可超链接</td>
+	        	  <td>网页收录</td>  
+	        	  <td>
+	        	  	<img src="../images/10.png"/>
+	        	    <img src="../images/11.png"/>	        	    
+	        	  </td>
+	        	  <td>暂停服务</td>
+	        	</tr>
+	            <tr class="tr">
+	        	  <td>
+	        	  	<input type="checkbox"/>
+	        	  </td>
+	        	  <td>天津在线</td>
+	        	  <td>商业资讯</td>
+	        	  <td></td>
+	        	  <td>
+	        	  	<span style="color: red;">40</span>&nbsp;<img src="../images/12.png" id="img"/ >
+	        	  </td>
+	        	  <td>可超链接</td>
+	        	  <td>网页收录</td>  
+	        	  <td>
+	        	  	<img src="../images/10.png"/>
+	        	  </td>
+	        	  <td>暂停服务</td>
+	        	</tr>
+	            <tr class="tr">
+	        	  <td>
+	        	  	<input type="checkbox"/>
+	        	  </td>
+	        	  <td>天津在线</td>
+	        	  <td>商业资讯</td>
+	        	  <td></td>
+	        	  <td>
+	        	  	<span style="color: red;">40</span>&nbsp;<img src="../images/12.png" id="img"/ >
+	        	  </td>
+	        	  <td>可超链接</td>
+	        	  <td>网页收录</td>  
+	        	  <td>
+	        	  	<img src="../images/11.png"/>	        	    
+	        	  </td>
+	        	  <td>暂停服务</td>
+	        	</tr>
+	        </tbody>
+	   </table>   
+	 </div>
+	 <ul class="list-unstyled text-center list-inline list-ul" id="ul0">
+	 	<li id="list">上一页</li>
+	    <li id="list-li" class="list">1</li>
+	    <li id="list-li1">2</li>
+	    <li id="list-li2">3</li>
+	    <li id="list-li3">4</li>
+	       ...
+	    <li id="list1">下一页</li>
+	 </ul>
+	</div>
+	<div class="refer">
+	   <button class="refer-btn">返回上一步，编辑软文</button>
+	   <div class="refer-div">
+	      <span>当前所选总额&nbsp;:&nbsp;<span style="color: #FF6600;">160</span>&nbsp;元</span>
+		  <button>提交订单</button>
+	   </div>
+	</div>
+</body>
+</html>

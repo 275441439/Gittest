@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>软文发布2</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <script src="../js/jquery-3.1.1.js"></script>
+    <script src="../js/my.js"></script>
+    <script>
+    	window.onload=function(){ 
+    	 var oUl = document.getElementById('ul2');
+         var oLi = oUl.getElementsByTagName('li');
+         var oMenu = document.getElementById('menu');
+         var span = document.getElementById('span');
+         for(var i=0;i<oLi.length;i++){
+         	   oLi[i].onclick=function(){
+         	   	   span.innerHTML = this.innerHTML;
+         	   	   oMenu.style.display='none'; 
+         	   }
+         }
+       };
+    </script>
+</head>
+<body>
+	<div class="mess">
+       <div class="text">
+       	  <input type="text"  placeholder="请在此输入标题，18字以内" />
+          <textarea placeholder="在这里写下你最美的文字" class="textarea"></textarea>
+          <div class="time" onclick="box()">
+          	 <span id="span">选择发布时间</span>
+             <img src="../images/9.png"/>
+          </div>
+          <div class="menu" id="menu" style="display: none;">
+          	 <div class="menu-content">
+          	    <ul class="ul2" id="ul2">
+          	      <li>选择发布时间</li>
+          	      <li>当天完成</li>
+          	      <li>两天内</li>
+          	      <li>三天内</li>
+          	      <li>四天内</li>
+          	      <li>五天内</li>
+          	      <li>六天内</li>
+          	    </ul>
+          	 </div>
+          </div>
+          <textarea class="textarea2" placeholder="写下你的要求，如不写则默认为无要求。&#13;&#10;有些网址无法带上联系方式。网址（超链接）及入口（文章列表），审核时会根据推广网站的要求进行删减。"></textarea>
+          <button class="btn1">下一步，选择推广媒体</button>
+          <div class="matter">
+          	 <ul class="ul3">
+          	 	<li style="font-size: 17px;">注意事项</li>
+          	    <li>1、稿件必须是原创，且没有被印成铅字</li>
+          	    <li>2、内容不涉及国家禁止的内容</li>
+          	    <li>3、投稿时注意稿件格式，避免出现排版错乱的情况，图片请上传</li>
+          	    <li>4、切忌一稿多投</li>
+          	 </ul>
+          </div>
+       </div>
+	   <div class="option">
+	   	  <ul class="ul">
+	   	  	<li>
+	   	  	  <a href="iavascript:void(0)">
+	   	  	    <img src="../images/2.png"/>
+	   	  	    <span>文档</span>
+	   	  	  </a>
+	   	  	</li>
+	   	    <li>
+	   	      <a href="iavascript:void(0)">
+	   	        <img src="../images/3.png"/>
+	   	  	    <span>图片</span>
+	   	      </a>
+	   	    </li>
+	   	    <li>
+	   	      <a href="iavascript:void(0)">
+	   	        <img src="../images/4.png"/>
+	   	  	    <span>视频</span>
+	   	      </a>
+	   	    </li>
+	   	    <li>
+	   	      <a href="iavascript:void(0)">
+	   	        <img src="../images/5.png"/>
+	   	  	    <span>音频</span>
+	   	      </a>
+	   	    </li>
+	   	    <li style="border-bottom: none;">
+	   	      <a href="iavascript:void(0)">
+	   	        <img src="../images/6.png"/>
+	   	  	    <span>音乐</span>
+	   	      </a>
+	   	    </li>
+	   	  </ul>
+	      <ul class="ul" style="margin-top: 40px;">
+	   	    <li>
+	   	      <a href="iavascript:void(0)">
+	   	        <img src="../images/7.png"/>
+	   	  	    <span>预览</span>
+	   	      </a>
+	   	    </li>
+	   	    <li style="border-bottom: none;">
+	   	      <a href="iavascript:void(0)">
+	   	        <img src="../images/8.png"/>
+	   	  	    <span>保存</span>
+	   	      </a>
+	   	    </li>
+	   	  </ul>
+	   </div>
+	</div>
+</body>
+</html>
